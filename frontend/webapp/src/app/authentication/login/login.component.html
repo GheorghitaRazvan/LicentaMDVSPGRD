@@ -1,0 +1,33 @@
+<div class="card">
+    <h4 class="card-header">Login</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="p-float-label">
+                <input type="text" pInputText formControlName="email" id="email" />
+                <label htmlFor="email">Adresă E-mail</label>
+                <div *ngIf="(submitted && fdata['email'].errors)" class="invalid-feedback">
+                    <div *ngIf="(fdata['email'].errors['required'])">Adresa E-mail este necesară</div>
+                </div>
+            </div>
+            <div class="p-float-label">
+                <p-password formControlName="password" styleClass="p-password p-component p-inputwrapper p-input-icon-right" [style]="{'width':'100%'}"
+                [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false" />
+                <label htmlFor="password">Parolă</label>
+                <div *ngIf="submitted && fdata['password'].errors" class="invalid-feedback">
+                    <div *ngIf="fdata['password'].errors['required']">Vă rugăm introduceți parola</div>
+                </div>
+                <div *ngIf="(submitted && accountNotFound)" class="invalid-feedback">
+                    Adresa de e-mail sau parola sunt incorecte
+                </div>
+            </div>
+            <div class="buttons">
+                <p-button (click)="onSubmit()" [disabled]="loading">
+                    Login
+                </p-button>
+                <p-button (click)="goToRegister()">
+                    Register
+                </p-button>
+            </div>
+        </form>
+    </div>
+</div>
