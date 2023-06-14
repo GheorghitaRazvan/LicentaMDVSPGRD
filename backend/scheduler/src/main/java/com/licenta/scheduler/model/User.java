@@ -2,6 +2,8 @@ package com.licenta.scheduler.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -23,6 +25,9 @@ public class User {
 
     @Column(name="phone", nullable = false, length = 10)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "user")
+    private List<Trip> trips;
 
     public Long getId() {
         return id;

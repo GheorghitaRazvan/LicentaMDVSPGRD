@@ -1,0 +1,72 @@
+.waiting-status {
+  background-color: aliceblue;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.custom-spinner {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.tour-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+}
+
+.p-fieldset {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .p-fieldset-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .p-fieldset-legend {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .p-fieldset-content p {
+    margin-bottom: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+
+  .buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .buttons p-button {
+    margin: 0 5px;
+}

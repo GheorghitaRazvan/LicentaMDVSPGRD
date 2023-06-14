@@ -1,0 +1,25 @@
+<div *ngIf="waiting" class="waiting-status">
+    Va rugam asteptati raspunsul de la server.
+    <p-progressSpinner id="customSpinner" *ngIf="waiting" styleClass="custom-spinner"></p-progressSpinner>
+</div>
+<div class="tour-list">
+    <p-fieldset *ngFor="let tour of allTours" legend="{{ tour.depot?.name }}">
+        <ng-container *ngIf="tour.vehicle">
+            <p>ID Vehicul: {{ tour.vehicle.id }}</p>
+        </ng-container>
+        <ng-container *ngIf="tour.trips && tour.trips.length > 0">
+            <p>Calatorii statisfacute:</p>
+            <ul>
+                <li *ngFor="let trip of tour.trips">{{ trip.startingLocation?.name }} -> {{ trip.finishingLocation?.name }} || {{ trip.startingTime }} - {{ trip.finishingTime }}</li>
+            </ul>
+        </ng-container>
+    </p-fieldset>
+</div>
+<div *ngIf="!waiting" class="buttons">
+    <p-button (click)="rejectSolution()">
+        Incearca generarea unei programari noi
+    </p-button>
+    <p-button (click)="acceptSolution()">
+        Accepta programarea propusa
+    </p-button>
+</div>

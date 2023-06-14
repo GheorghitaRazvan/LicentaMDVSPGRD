@@ -1,0 +1,36 @@
+<div class="trip-list">
+    <div *ngFor ="let trip of allTrips" class="trip">
+        <p-fieldset legend="{{ allTrips.indexOf(trip) + 1 }}">
+            <div class="trip-properties">
+                <div class="trip-property">
+                    <label>Staring location: </label>
+                    <div> {{ trip.startingLocation?.name }}</div>
+                </div>   
+                <div class="trip-property"> 
+                    <label>Finishing location: </label>
+                    <div>{{ trip.finishingLocation?.name }}</div>
+                </div>
+                <div class="trip-property">
+                    <label>Starting time: </label>
+                    <div>{{ trip.startingTime }}</div>
+                </div>
+                <div class="trip-property">
+                    <label>Finishing time: </label>
+                    <div>{{ trip.finishingTime }}</div>
+                </div>
+                <div class="trip-property">
+                    <label>Persons: </label>
+                    <div>{{ trip.persons }}</div>
+                </div>
+                <div class="trip-property">
+                    <label>Status:  </label>
+                    <div [ngClass] = "{
+                        'rejected-status': trip.status === 'Rejected',
+                        'waiting-status': trip.status === 'Waiting',
+                        'accepted-status': trip.status === 'Accepted'
+                    }">{{trip.status }}  </div>
+                </div>
+            </div>
+        </p-fieldset>
+    </div>
+</div>

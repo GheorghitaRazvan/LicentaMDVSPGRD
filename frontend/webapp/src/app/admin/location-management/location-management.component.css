@@ -1,0 +1,78 @@
+.location-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.location {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.location-properties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.location-property {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.location-property label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.rejected-status { 
+    color: red;
+}
+
+.waiting-status {
+    color: blue;
+}
+
+.accepted-status {
+    color: lime;
+}
+
+::ng-deep .selected-location .p-fieldset-legend {
+    background-color: beige;
+}
+
+::ng-deep .selected-location .p-fieldset {
+    background-color: beige;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.buttons .message {
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #ffdddd; 
+    color: red; 
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.buttons .button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons .button-group p-button {
+    margin: 0 5px;
+}

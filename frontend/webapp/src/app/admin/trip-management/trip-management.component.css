@@ -1,0 +1,62 @@
+.trip-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.trip {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.trip-properties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trip-property {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.trip-property label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.rejected-status { 
+    color: red;
+}
+
+.waiting-status {
+    color: blue;
+}
+
+.accepted-status {
+    color: lime;
+}
+
+::ng-deep .selected-trip .p-fieldset-legend {
+    background-color: beige;
+}
+
+::ng-deep .selected-trip .p-fieldset {
+    background-color: beige;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .buttons p-button {
+    margin: 0 5px;
+}

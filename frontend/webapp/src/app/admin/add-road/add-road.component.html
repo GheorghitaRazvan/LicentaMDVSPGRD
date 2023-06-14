@@ -1,0 +1,32 @@
+<div class="card">
+    <h4 class="card-header">Adauga un nou drum</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="startingLocation">Alegeți locația de început:</label>
+                <p-dropdown formControlName="selectedStartingLocation" [options]="locations" placeholder="Alegeți locatia de inceput"
+                 optionLabel="name"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="finishingLocation">Alegeți locatia de final:</label>
+                <p-dropdown formControlName="selectedFinishingLocation" [options]="locations" placeholder="Alegeți locatia de final"
+                 optionLabel="name"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="cost">Cost timp in minute: </label>
+                <input type="text" pInputText id="cost" formControlName="costControl">
+                <div *ngIf="form.get('costControl')?.touched && form.get('costControl')?.invalid" class="invalid-feedback">
+                    Va rugam introduceti un numar pozitiv
+                </div>
+            </div>
+            <div class="buttons">
+                <p-button (click)="onSubmit()" [disabled]="loading">
+                    Adauga drum
+                </p-button>
+                <p-button (click)="goToRoads()">
+                    Inapoi la drumuri
+                </p-button>
+            </div>
+        </form>
+    </div>
+</div>

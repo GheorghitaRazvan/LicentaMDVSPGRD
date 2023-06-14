@@ -48,4 +48,11 @@ export class AuthenticationService {
         localStorage.setItem('register', JSON.stringify(response));
       }))
   }
+
+  registerDriver(email: string, password: string, firstName: string, lastName: string, depotId: string) {
+    return this.http.post(`${environment.backApi}/register/driver`, {email, password, firstName, lastName, depotId}, {responseType: 'text'})
+      .pipe(map(response => {
+        localStorage.setItem('registerDriver', JSON.stringify(response));
+      }))
+  }
 }

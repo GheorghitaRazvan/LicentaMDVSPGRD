@@ -9,7 +9,6 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { UserRegisterComponent } from "./user-register/user-register.component";
-import { DriverRegisterComponent } from "./driver-register/driver-register.component";
 
 @NgModule({
     imports: [
@@ -25,7 +24,6 @@ import { DriverRegisterComponent } from "./driver-register/driver-register.compo
         LayoutComponent,
         LoginComponent,
         UserRegisterComponent,
-        DriverRegisterComponent
     ]
 })
 

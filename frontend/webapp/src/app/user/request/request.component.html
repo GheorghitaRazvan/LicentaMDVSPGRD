@@ -1,0 +1,46 @@
+<div class="card">
+    <h4 class="card-header">Cerere cursa</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="startingLocation">Alegeți locația de început:</label>
+                <p-dropdown formControlName="selectedStartingLocation" [options]="locations" placeholder="Alegeți locatia de inceput"
+                 optionLabel="name"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="finishingLocation">Alegeți locatia de final:</label>
+                <p-dropdown formControlName="selectedFinishingLocation" [options]="locations" placeholder="Alegeți locatia de final"
+                 optionLabel="name"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="startingTimeInput">Timp de start: </label>
+                <input type="text" pInputText id="startingTimeInput" formControlName="startingTimeControl">
+                <div *ngIf="form.get('startingTimeControl')?.touched && form.get('startingTimeControl')?.invalid" class="invalid-feedback">
+                  Va rugam introduceti un timp intre 08:10 si 19:59.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="finishingTimeInput">Timp de final: </label>
+                <input type="text" pInputText id="finishingTimeInput" formControlName="finishingTimeControl">
+                <div *ngIf="form.get('finishingTimeControl')?.touched && form.get('finishingTimeControl')?.invalid" class="invalid-feedback">
+                  Va rugam introduceti un timp intre 08:10 si 19:59.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="persons">Numar de persoane: </label>
+                <input type="text" pInputText id="persons" formControlName="personsControl">
+                <div *ngIf="form.get('personsControl')?.touched && form.get('personsControl')?.invalid" class="invalid-feedback">
+                  Va rugam introduceti un numar de persoane (1-3)
+                </div>
+              </div>
+            <div class="buttons">
+                <p-button (click)="onSubmit()" [disabled]="loading">
+                    Comanda o cursa
+                </p-button>
+                <p-button (click)="goToTrips()">
+                    Inapoi la curse
+                </p-button>
+            </div>
+        </form>
+    </div>
+</div>

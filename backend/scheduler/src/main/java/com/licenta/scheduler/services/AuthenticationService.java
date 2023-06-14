@@ -1,11 +1,16 @@
 package com.licenta.scheduler.services;
 
 import com.licenta.scheduler.model.*;
-import com.licenta.scheduler.repository.AdminRepository;
-import com.licenta.scheduler.repository.DriverRepository;
-import com.licenta.scheduler.repository.UserRepository;
+import com.licenta.scheduler.model.frontData.DriverRegisterForm;
+import com.licenta.scheduler.model.frontData.RegisterForm;
+import com.licenta.scheduler.model.frontData.UserData;
+import com.licenta.scheduler.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+import static java.lang.Long.parseLong;
 
 @Service
 public class AuthenticationService {
@@ -17,6 +22,12 @@ public class AuthenticationService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private LocationRepository locationRepository;
+
+    @Autowired
+    private VehicleRepository vehicleRepository;
 
     @Autowired
     private Encrypter encrypter;
@@ -78,5 +89,39 @@ public class AuthenticationService {
         user.setPhoneNumber(registerFormData.getPhoneNumber());
         userRepository.save(user);
         return "Account successfully created";
+    }
+
+    public String registerDriver(DriverRegisterForm registerFormData) {
+        if(driverRepository.findByEmail(registerFormData.getEmail()) != null)
+        {
+            return "Email already in use";
+        }
+        Driver driver = new Driver();
+        driver.setEmail(registerFormData.getEmail());
+        driver.setPassword(encrypter.encrypt(registerFormData.getPassword()));
+        driver.setFirstName(registerFormData.getFirstName());
+        driver.setLastName(registerFormData.getLastName());
+
+        Long depotId = parseLong(registerFormData.getDepotId());
+        Optional<Location> depot = locationRepository.findById(depotId);
+        if(depot.isPresent())
+        {
+            Location foundDepot = depot.get();
+
+            Vehicle vehicle = new Vehicle();
+            vehicle.setCapacity(3L);
+            vehicle.setDriver(driver);
+            vehicle.setDepot(foundDepot);
+
+            driver.setVehicle(vehicle);
+            driverRepository.save(driver);
+
+            vehicleRepository.save(vehicle);
+            return "Account successfully created";
+        }
+        else
+        {
+            return "Depot not found";
+        }
     }
 }

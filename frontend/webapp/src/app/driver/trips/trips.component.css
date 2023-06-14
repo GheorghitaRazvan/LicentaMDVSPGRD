@@ -1,0 +1,26 @@
+.trip-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trip {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.trip-properties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trip-property {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.trip-property label {
+    font-weight: bold;
+    margin-right: 5px;
+}
