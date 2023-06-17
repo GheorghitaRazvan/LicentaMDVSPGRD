@@ -3,28 +3,28 @@
         <p-fieldset legend="{{ allLocations.indexOf(location) + 1 }}" (click)="toggleLocation(location)" [ngClass] = "{ 'selected-location': location.selected }">
             <div class="location-properties">
                 <div class="location-property">
-                    <label>Location Name: </label>
+                    <label>Numele locației: </label>
                     <div> {{ location.name }}</div>
                 </div>   
                 <div class="location-property"> 
-                    <label>Location Type: </label>
+                    <label>Tipul locației: </label>
                     <div>{{ location.type }}</div>
                 </div>
                 <div *ngIf="location.type === 'Depot' " class="location-property">
-                    <label>Vehicles ID: </label>
+                    <label>ID-urile vehiculelor din depou: </label>
                     <div *ngFor="let vehicle of location?.vehicles"> {{vehicle.id}} </div>
                 </div>
             </div>
         </p-fieldset>
     </div>
     <div class="buttons">
-        <div class="message" *ngIf="failed">Stergerea locatiei selectate duce la deconectarea grafului</div>
+        <div class="message" *ngIf="failed">Ștergerea locației selectate duce la deconectarea grafului</div>
         <div class="button-group">
             <p-button (click)="deleteSelectedLocation()" [disabled]="deleting">
-                Sterge locatia selectata
+                Șterge locația selectată
             </p-button>
             <p-button (click)="addLocation()">
-                Adauga o noua locatie
+                Adaugă o nouă locație
             </p-button>
         </div>
     </div>

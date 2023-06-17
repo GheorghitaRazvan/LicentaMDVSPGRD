@@ -1,0 +1,29 @@
+.navbar {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(9, 9, 119) 12%, rgba(0,212,255,1) 100%);
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    border-radius: 5px;
+    gap: 10px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-button {
+    margin-right: 10px;
+}
+
+.logout-button {
+    margin-left: 10px;
+}
+
+.active {
+    font-weight: bold;
+    background-color: rgb(9, 9, 119);
+}

@@ -13,6 +13,10 @@ export class GraphService {
 
   constructor(private http: HttpClient) { }
 
+  getShortestPathCost(startId: string, finishId: string): Observable<number>{
+    return this.http.get<number>(`${environment.backApi}/graph/shortest/${startId}/${finishId}`)
+  }
+
   getSolutionTours():Observable<Tour[]> {
     return this.http.get<Tour[]>(`${environment.backApi}/graph/tours`)
      .pipe(map(response => {
@@ -69,7 +73,6 @@ export class GraphService {
     
     return this.http.delete(`${environment.backApi}/graph/location`, options)
       .pipe(map(response => {
-        console.log(response);
         localStorage.setItem('deleteLocation', JSON.stringify(response));
       }));
   }

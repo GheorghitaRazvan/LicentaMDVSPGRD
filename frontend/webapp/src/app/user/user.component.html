@@ -1,3 +1,11 @@
+<div class="navbar">
+    <div class="nav-links">
+        <button pButton label="Călătoriile mele" class="nav-button" routerLink="./trips" routerLinkActive="active"></button>
+        <button pButton label="Cere o nouă călătorie" class="nav-button" routerLink="./request" routerLinkActive="active"></button>
+    </div>
+    <button pButton label="Delogare" class="logout-button" (click)="logout()"></button>
+</div>
+
 <div class="container col-md-6 offset-md-3 mt-5">
     <router-outlet></router-outlet>
 </div>

@@ -36,3 +36,12 @@
 .accepted-status {
     color: lime;
 }
+
+.message {
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #ffdddd; 
+    color: red; 
+    padding: 5px;
+    border-radius: 5px;
+}

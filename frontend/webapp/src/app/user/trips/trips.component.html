@@ -1,25 +1,28 @@
 <div class="trip-list">
+    <div *ngIf="allTrips.length == 0" class="message">
+        Nu am gasit nicio solicitare pentru calătorii asociate contului dumneavoastră
+    </div>
     <div *ngFor ="let trip of allTrips" class="trip">
         <p-fieldset legend="{{ allTrips.indexOf(trip) + 1 }}">
             <div class="trip-properties">
                 <div class="trip-property">
-                    <label>Staring location: </label>
+                    <label>Locația de start: </label>
                     <div> {{ trip.startingLocation?.name }}</div>
                 </div>   
                 <div class="trip-property"> 
-                    <label>Finishing location: </label>
+                    <label>Locația de încheiere: </label>
                     <div>{{ trip.finishingLocation?.name }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Starting time: </label>
+                    <label>Timpul de start al călătoriei: </label>
                     <div>{{ trip.startingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Finishing time: </label>
+                    <label>Timpul de final al călătoriei: </label>
                     <div>{{ trip.finishingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Persons: </label>
+                    <label>Număr de persoane: </label>
                     <div>{{ trip.persons }}</div>
                 </div>
                 <div class="trip-property">

@@ -1,9 +1,9 @@
 <div class="card">
-    <h4 class="card-header">Înregistrare sofer</h4>
+    <h4 class="card-header">Înregistrare șofer</h4>
     <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="depot">Alegeți depoul de unde soferul incepe munca</label>
+                <label for="depot">Alegeți depoul de unde șoferul începe munca</label>
                 <p-dropdown formControlName="selectedDepot" [options]="depots" placeholder="Alegeti depoul"
                 optionLabel="name"></p-dropdown>
             </div>
@@ -11,21 +11,21 @@
                 <input type="text" pInputText formControlName="firstName" class="form-control" />
                 <label class="form-label">Prenume</label>
                 <div *ngIf="submitted && fdata['firstName'].errors" class="invalid-feedback">
-                    <div *ngIf="fdata['firstName'].errors['required']">Va rugam introduceti un prenume</div>
+                    <div *ngIf="fdata['firstName'].errors['required']">Vă rugăm introduceți un prenume</div>
                 </div>
             </div>
             <div class="p-float-label">
                 <input type="text" pInputText formControlName="lastName" class="form-control" />
                 <label class="form-label">Nume</label>
                 <div *ngIf="submitted && fdata['lastName'].errors" class="invalid-feedback">
-                    <div *ngIf="fdata['lastName'].errors['required']">Va rugam introduceti un nume</div>
+                    <div *ngIf="fdata['lastName'].errors['required']">Vă rugăm introduceți un nume</div>
                 </div>
             </div>
             <div class="p-float-label">
                 <input type="text" pInputText formControlName="email" class="form-control" />
                 <label class="form-label">Adresă E-mail</label>
                 <div *ngIf="submitted && fdata['email'].errors" class="invalid-feedback">
-                    <div *ngIf="fdata['email'].errors['required']">Va rugam introduceti adresa de E-mail</div>
+                    <div *ngIf="fdata['email'].errors['required']">Vă rugăm introduceți adresa de E-mail</div>
                 </div>
             </div>
             <div class="p-float-label">
@@ -33,17 +33,14 @@
                 [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false" />
                 <label class="form-label">Parolă</label>
                 <div *ngIf="submitted && fdata['password'].errors" class="invalid-feedback">
-                    <div *ngIf="fdata['password'].errors['required']">Va rugam introduceti o parola</div>
-                    <div *ngIf="fdata['password'].errors['minlength']">Parola trebuie sa contina cel putin 6 caractere</div>
+                    <div *ngIf="fdata['password'].errors['required']">Vă rugăm introduceți o parola</div>
+                    <div *ngIf="fdata['password'].errors['minlength']">Parola trebuie să conțină cel puțin 6 caractere</div>
                 </div>
             </div>
-            <div *ngIf="(submitted && emailAlreadyInUse)" class="invalid-feedback">Adresa de E-mail este deja folosita</div>
+            <div *ngIf="(submitted && emailAlreadyInUse)" class="invalid-feedback">Adresa de E-mail este deja folosită</div>
             <div class="buttons">
                 <p-button (click)="onSubmit()" [disabled]="loading">
-                    Inregistreaza soferul
-                </p-button>
-                <p-button (click)="goToMain()">
-                    Inapoi
+                    Înregistrează șoferul
                 </p-button>
             </div>
         </form>

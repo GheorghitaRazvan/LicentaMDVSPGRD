@@ -3,31 +3,31 @@
         <p-fieldset legend="{{ allRoads.indexOf(road) + 1 }}" (click)="toggleRoad(road)" [ngClass] = "{ 'selected-road': road.selected }">
             <div class="road-properties">
                 <div class="road-property">
-                    <label>Staring location: </label>
+                    <label>De la locația de start: </label>
                     <div> {{ road.startingLocation?.name }}</div>
                 </div>   
                 <div class="road-property"> 
-                    <label>Finishing location: </label>
+                    <label>La locația de încheiere: </label>
                     <div>{{ road.finishingLocation?.name }}</div>
                 </div>
                 <div class="road-property">
-                    <label>Cost: </label>
+                    <label>Costul transportului în minute: </label>
                     <div>{{ road.cost }}</div>
                 </div>
             </div>
         </p-fieldset>
     </div>
     <div class="buttons">
-        <div class="message" *ngIf="failed">Stergerea drumurilor selectate duce la deconectarea grafului</div>
+        <div class="message" *ngIf="failed">Ștergerea drumurilor selectate duce la deconectarea grafului</div>
         <div class="button-group">
             <p-button (click)="deleteSelectedRoads()" [disabled]="deleting">
-                Sterge drumurile selectate
+                Șterge drumurile selectate
             </p-button>
             <p-button (click)="deselectRoads()">
-                Deselecteaza toate drumurile
+                Deselectează toate drumurile
             </p-button>
             <p-button (click)="addRoad()">
-                Adauga un nou drum
+                Adaugă un nou drum
             </p-button>
         </div>
     </div>

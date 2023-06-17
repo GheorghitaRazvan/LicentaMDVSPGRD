@@ -1,22 +1,22 @@
 <div class="card">
-    <h4 class="card-header">Adauga o noua locatie</h4>
+    <h4 class="card-header">Adaugă o nouă locație</h4>
     <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="name">Numele locatiei</label>
+                <label for="name">Numele locației</label>
                 <input type="text" pInputText id="name" formControlName="nameControl">
             </div>
             <div class="form-group">
-                <label for="type">Tipul locatiei</label>
+                <label for="type">Tipul locației</label>
                 <p-dropdown formControlName="selectedType" [options]="types">
                 </p-dropdown>
             </div>
             <div class="buttons">
                 <p-button (click)="onSubmit()" [disabled]="loading">
-                    Adauga locatie
+                    Adaugă locația
                 </p-button>
                 <p-button (click)="goToLocations()">
-                    Inapoi la locatii
+                    Înapoi la locații
                 </p-button>
             </div>
         </form>

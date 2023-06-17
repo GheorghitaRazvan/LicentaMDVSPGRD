@@ -3,28 +3,32 @@
         <p-fieldset legend="{{ allTrips.indexOf(trip) + 1 }}">
             <div class="trip-properties">
                 <div class="trip-property">
-                    <label>Staring location: </label>
+                    <label>Locația de început: </label>
                     <div> {{ trip.startingLocation?.name }}</div>
                 </div>   
                 <div class="trip-property"> 
-                    <label>Finishing location: </label>
+                    <label>Locație de final: </label>
                     <div>{{ trip.finishingLocation?.name }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Starting time: </label>
+                    <label>Timpul de început al călătoriei: </label>
                     <div>{{ trip.startingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Finishing time: </label>
+                    <label>Timpul de încheiere al călătoriei: </label>
                     <div>{{ trip.finishingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Persons: </label>
+                    <label>Numărul de persoane: </label>
                     <div>{{ trip.persons }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>User: </label>
+                    <label>Nume utilizator: </label>
                     <div>{{ trip.user?.firstName }} {{ trip.user?.lastName }}</div>
+                </div>
+                <div class="trip-propery">
+                    <label>Telefon utilizator: </label>
+                    <div>{{ trip.user?.phoneNumber }}</div>
                 </div>
             </div>
         </p-fieldset>

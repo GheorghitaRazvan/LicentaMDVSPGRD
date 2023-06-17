@@ -51,6 +51,7 @@ export class TripsComponent implements OnInit{
           {
             user.firstName = trip.user.firstName;
             user.lastName = trip.user.lastName;
+            user.phoneNumber = trip.user.phoneNumber;
             newTrip.user = user;
           }
           newTrip.persons = trip.persons;

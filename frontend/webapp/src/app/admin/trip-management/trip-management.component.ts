@@ -39,6 +39,7 @@ export class TripManagementComponent implements OnInit {
               location.name = trip.startingLocation.name;
               newTrip.startingLocation = location;
             }
+            location = new CityLocation();
             if(trip.finishingLocation != undefined && 
               "id" in trip.finishingLocation &&
               "name" in trip.finishingLocation

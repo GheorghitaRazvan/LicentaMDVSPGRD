@@ -5,6 +5,7 @@ import { DriverRoutingModule } from './driver-routing.module';
 import { DriverComponent } from './driver.component';
 import { TripsComponent } from './trips/trips.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FieldsetModule } from 'primeng/fieldset';
   imports: [
     CommonModule,
     DriverRoutingModule,
+    ButtonModule,
     FieldsetModule
   ]
 })

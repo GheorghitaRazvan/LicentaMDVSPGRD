@@ -70,3 +70,52 @@
   .buttons p-button {
     margin: 0 5px;
 }
+
+.statistics {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.5em;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.satisfaction-bar {
+  background-color: rgb(119, 125, 131);
+  border-radius: 5px;
+  margin-left: 10px;
+  height: auto;
+  width: 25%;
+}
+
+.satisfaction-bar-inner {
+  background-color: rgb(76, 175, 80);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.satisfaction-bar-inner.high {
+  background-color: rgb(255, 193, 7);
+}
+
+.satisfaction-bar-inner.highest {
+  background-color: rgb(244, 67, 54);
+}
+
+.waiting-statistics {
+  word-spacing: normal;
+}
+
+.total-waiting-time {
+  margin-left: 10px;
+}

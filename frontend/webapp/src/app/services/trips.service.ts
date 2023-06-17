@@ -10,12 +10,16 @@ import { Trip } from '../models/trip';
 })
 export class TripsService {
 
-  private userId : string;
+  private userId : string = '-1';
 
   constructor(
     private router: Router,
     private http: HttpClient
   ) { 
+    this.updateUserId();
+  }
+
+  updateUserId(){
     var user = localStorage.getItem('user');
     if(user == null) {
       this.userId = '-1';
@@ -28,6 +32,7 @@ export class TripsService {
   }
 
   getTrips():Observable<Trip[]> {
+    this.updateUserId();
     return this.http.get<Trip[]>(`${environment.backApi}/trips/user/${this.userId}`)
       .pipe(map(response => {
         if(response) {
@@ -38,6 +43,7 @@ export class TripsService {
   }
 
   getDriverTrips():Observable<Trip[]> {
+    this.updateUserId();
     return this.http.get<Trip[]>(`${environment.backApi}/trips/driver/${this.userId}`)
      .pipe(map(response => {
        if(response) {

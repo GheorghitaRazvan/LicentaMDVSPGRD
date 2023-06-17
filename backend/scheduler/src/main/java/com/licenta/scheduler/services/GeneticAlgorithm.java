@@ -135,6 +135,7 @@ public class GeneticAlgorithm {
         }
     }
     public int[][] runGeneticAlgorithm() {
+        bestTries.clear();
         for(int i = 0; i < this.tries; i++) {
             postConstruct();
 

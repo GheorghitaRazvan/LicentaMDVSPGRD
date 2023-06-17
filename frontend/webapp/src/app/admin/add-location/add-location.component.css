@@ -1,6 +1,6 @@
 .card {
     width: 50vw;
-    height: 80vh;
+    height: auto;
     margin-left: 25vw;
     margin-right: 25vw;
     font-family: Arial, Helvetica, sans-serif;

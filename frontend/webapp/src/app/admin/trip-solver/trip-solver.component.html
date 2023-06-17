@@ -1,6 +1,26 @@
 <div *ngIf="waiting" class="waiting-status">
-    Va rugam asteptati raspunsul de la server.
+    Vă rugăm așteptați răspunsul de la server.
     <p-progressSpinner id="customSpinner" *ngIf="waiting" styleClass="custom-spinner"></p-progressSpinner>
+</div>
+<div *ngIf="!waiting" class="statistics">
+    <div class="row">
+        <div class="trips-statistics">
+            Această planificare satisface {{ satisfiedTrips }} din {{ allTrips }} călătorii aflate în așteptare
+        </div>
+        <div class="satisfaction-bar">
+            <div class="satisfaction-bar-inner" [style.width.%]="tripSatisfactionPercentage">
+                {{ tripSatisfactionPercentage }}%
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="waiting-statistics">
+            Această planificare are următorul timp pierdut în așteptare:
+        </div>
+        <div class="total-waiting-time" [style.color]="getWaitingTimeColor(totalWaitingTime)">
+            {{ totalWaitingTime }} minute
+        </div>
+    </div>
 </div>
 <div class="tour-list">
     <p-fieldset *ngFor="let tour of allTours" legend="{{ tour.depot?.name }}">
@@ -8,18 +28,19 @@
             <p>ID Vehicul: {{ tour.vehicle.id }}</p>
         </ng-container>
         <ng-container *ngIf="tour.trips && tour.trips.length > 0">
-            <p>Calatorii statisfacute:</p>
+            <p>Călătorii statisfăcute:</p>
             <ul>
-                <li *ngFor="let trip of tour.trips">{{ trip.startingLocation?.name }} -> {{ trip.finishingLocation?.name }} || {{ trip.startingTime }} - {{ trip.finishingTime }}</li>
+                <li *ngFor="let trip of tour.trips">{{ trip.startingLocation?.name }} -> {{ trip.finishingLocation?.name
+                    }} || {{ trip.startingTime }} - {{ trip.finishingTime }}</li>
             </ul>
         </ng-container>
     </p-fieldset>
 </div>
 <div *ngIf="!waiting" class="buttons">
     <p-button (click)="rejectSolution()">
-        Incearca generarea unei programari noi
+        Încearcă generarea unei programări noi
     </p-button>
     <p-button (click)="acceptSolution()">
-        Accepta programarea propusa
+        Acceptă programarea propusă
     </p-button>
 </div>

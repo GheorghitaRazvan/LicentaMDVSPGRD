@@ -1,3 +1,23 @@
+<div class="navbar">
+    <div class="nav-links">
+        <button pButton label="Respinge cereri" class="nav-button" [routerLink]="['reject']"
+            routerLinkActive="active"></button>
+        <button pButton label="Șterge drumuri" class="nav-button" [routerLink]="['road']"
+            routerLinkActive="active"></button>
+        <button pButton label="Adaugă un drum" class="nav-button" [routerLink]="['addRoad']"
+            routerLinkActive="active"></button>
+        <button pButton label="Șterge o locație" class="nav-button" [routerLink]="['location']"
+            routerLinkActive="active"></button>
+        <button pButton label="Adaugă o locație" class="nav-button" [routerLink]="['addLocation']"
+            routerLinkActive="active"></button>
+        <button pButton label="Planifică călătoriile" class="nav-button" [routerLink]="['schedule']"
+            routerLinkActive="active"></button>
+        <button pButton label="Adaugă un nou șofer" class="nav-button" [routerLink]="['driver']"
+            routerLinkActive="active"></button>
+    </div>
+        <button pButton label="Delogare" class="logout-button" (click)="logout()"></button>
+</div>
+
 <div class="container col-md-6 offset-md-3 mt-5">
     <router-outlet></router-outlet>
 </div>

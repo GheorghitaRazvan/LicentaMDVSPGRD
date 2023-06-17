@@ -3,23 +3,23 @@
         <p-fieldset legend="{{ allTrips.indexOf(trip) + 1 }}" (click)="toggleTrip(trip)" [ngClass] = "{ 'selected-trip': trip.status === 'Rejected'}">
             <div class="trip-properties">
                 <div class="trip-property">
-                    <label>Staring location: </label>
+                    <label>Locația de start: </label>
                     <div> {{ trip.startingLocation?.name }}</div>
                 </div>   
                 <div class="trip-property"> 
-                    <label>Finishing location: </label>
+                    <label>Locația de încheiere: </label>
                     <div>{{ trip.finishingLocation?.name }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Starting time: </label>
+                    <label>Timpul de start: </label>
                     <div>{{ trip.startingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Finishing time: </label>
+                    <label>Timpul de încheiere: </label>
                     <div>{{ trip.finishingTime }}</div>
                 </div>
                 <div class="trip-property">
-                    <label>Persons: </label>
+                    <label>Număr persoane: </label>
                     <div>{{ trip.persons }}</div>
                 </div>
                 <div class="trip-property">
@@ -38,7 +38,7 @@
             Respinge cursele selectate
         </p-button>
         <p-button (click)="deselectTrips()">
-            Deselecteaza toate cursele
+            Deselectează toate cursele
         </p-button>
     </div>
 </div>

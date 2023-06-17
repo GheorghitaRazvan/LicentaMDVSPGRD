@@ -50,8 +50,24 @@ export class LoginComponent implements OnInit {
                     }
                     else
                     {
-                        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                        this.router.navigateByUrl(returnUrl);
+                        var userType : string = '';
+
+                        var json = JSON.parse(localStorage['user']);
+                        
+                        userType = json.userType;
+
+                        if(userType == 'user')
+                        {
+                            this.router.navigate(['../../user'], { relativeTo: this.route });
+                        }
+                        if(userType == 'driver')
+                        {
+                            this.router.navigate(['../../driver'], { relativeTo: this.route});
+                        }
+                        if(userType == 'admin')
+                        {
+                            this.router.navigate(['../../admin'], { relativeTo: this.route });
+                        }
                     }
                 },
                 error: error => {
