@@ -2,7 +2,7 @@
     <div *ngIf="allTrips.length == 0" class="message">
         Nu am gasit nicio solicitare pentru calătorii asociate contului dumneavoastră
     </div>
-    <div *ngFor ="let trip of allTrips" class="trip">
+    <div *ngFor ="let trip of allTrips" class="trip" (click)="toggleTrip(trip)" [ngClass] = "{ 'selected-trip': trip.selected }">
         <p-fieldset legend="{{ allTrips.indexOf(trip) + 1 }}">
             <div class="trip-properties">
                 <div class="trip-property">
@@ -35,5 +35,11 @@
                 </div>
             </div>
         </p-fieldset>
+    </div>
+    <div class="buttons" *ngIf="selected">
+        <div class="message" *ngIf="failed">A apărut o eroare la anularea cererii</div>
+        <p-button (click)="cancelTrip()">
+            Anulează cererea selectată
+        </p-button>
     </div>
 </div>

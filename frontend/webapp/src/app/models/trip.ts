@@ -10,4 +10,5 @@ export class Trip {
     persons?: string;
     status?: string;
     user?: User;
+    selected?: boolean;
 }
