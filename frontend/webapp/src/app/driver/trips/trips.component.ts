@@ -36,6 +36,7 @@ export class TripsComponent implements OnInit{
             location.name = trip.startingLocation.name;
             newTrip.startingLocation = location;
           }
+          var location = new CityLocation();
           if(trip.finishingLocation != undefined && 
             "id" in trip.finishingLocation &&
             "name" in trip.finishingLocation
